@@ -71,5 +71,22 @@ export default {
                 items: await basicFecth(`/discover/movie?with_genres=99&language=pt-BR&api_key=${API_KEY}`)
             }
         ];
+    },
+    getFilmeInfo: async(filmeId, tipoFilme) => {
+        let info = {};
+
+        if (filmeId) {
+            switch(tipoFilme) {
+                case 'movie':
+                    info = await basicFecth(`/movie/${filmeId}?language=pt-BR&api_key=${API_KEY}`);
+                break;
+
+                case 'tv':
+                    info = await basicFecth(`/tv/${filmeId}?language=pt-BR&api_key=${API_KEY}`);
+                break;
+            }
+        }
+
+        return info;
     }
 }
