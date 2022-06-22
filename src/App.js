@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Tmdb from './requisicoes/Tmdb';
 
+import Topo from "./componentes/Topo";
 import FilmeDestaque from './componentes/FilmeDestaque';
 import Filmes from './componentes/Filmes';
 
@@ -10,6 +11,7 @@ export default function App() {
   //Estado
   const [listaFilmes, setListaFilmes] = useState([]);
   const [conteudoDestaque, setConteudoDestaque] = useState(null);
+  const [fundoPreto, setFundoPreto] = useState(false)
 
   //Logic
   useEffect(() => {
@@ -26,11 +28,29 @@ export default function App() {
       setConteudoDestaque(filmeEscolhidoInfo);
     }
     loadAll();
+  }, []);
+
+  useEffect(() => {
+    const scrollListener = (e) => {
+      if (window.scrollY > 10) {
+        setFundoPreto(true)
+      } else {
+        setFundoPreto(false);
+      }
+      
+    };
+
+    window.addEventListener("scroll", scrollListener);
+
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+    }
   }, [])
 
   //render
   return (
     <Pagina>
+      <Topo fundoPreto={fundoPreto}/>
 
       {conteudoDestaque ? <FilmeDestaque item={conteudoDestaque}/> : "Carregando..."}
 

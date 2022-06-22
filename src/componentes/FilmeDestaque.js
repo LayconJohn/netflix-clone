@@ -62,7 +62,7 @@ const DestaqueHorizontal = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 70px 0px 150px 30px;
+    padding: 30px 0px 150px 30px;
 `;
 
 const DestaqueNome = styled.div`
