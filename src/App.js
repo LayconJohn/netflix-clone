@@ -36,8 +36,7 @@ export default function App() {
         setFundoPreto(true)
       } else {
         setFundoPreto(false);
-      }
-      
+      }     
     };
 
     window.addEventListener("scroll", scrollListener);
@@ -62,13 +61,18 @@ export default function App() {
         })}
       </Listas>
 
+      <Rodape>
+        Feito com <span role="img" aria-label='coração'>❤️️</span> por Laycon John<br/>
+        Direitos de imagem para Netflix<br/>
+        Dados coletados do site Themoviedb.org
+      </Rodape>
+
     </Pagina>
   )
 }
 
-const Header = styled.header``;
-
 const Pagina = styled.div`
+  height: 100%;
   box-sizing: border-box;
   background-color: #111;
   color: #fff;
@@ -80,4 +84,7 @@ const Listas = styled.div`
   margin-top: -150px;
 `;
 
-const Rodape = styled.div``;
+const Rodape = styled.footer`
+  margin: 50px 0px;
+  text-align: center;
+`;
