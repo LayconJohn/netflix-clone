@@ -7,6 +7,7 @@ import Topo from "./componentes/Topo";
 import FilmeDestaque from './componentes/FilmeDestaque';
 import Filmes from './componentes/Filmes';
 
+
 export default function App() {
   //Estado
   const [listaFilmes, setListaFilmes] = useState([]);
@@ -87,4 +88,5 @@ const Listas = styled.div`
 const Rodape = styled.footer`
   margin: 50px 0px;
   text-align: center;
+  overflow: hidden;
 `;

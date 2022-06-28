@@ -18,7 +18,7 @@ export default function Topo ( {fundoPreto} ) {
 
 const Header = styled.header`
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 10;
     right: 0;
     left: 0;
@@ -28,6 +28,7 @@ const Header = styled.header`
     padding: 10px 30px 0px 30px;
     background: ${props => props.fundo ? "#141414" : "transparent"};
     transition: all ease 0.5s;
+    overflow: hidden;
 `;
 
 const Logo = styled.div`
