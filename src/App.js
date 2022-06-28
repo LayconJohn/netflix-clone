@@ -68,6 +68,14 @@ export default function App() {
         Dados coletados do site Themoviedb.org
       </Rodape>
 
+      {listaFilmes.length === 0 ? 
+          <Loading>
+            <img src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif" alt="Carregando" />
+          </Loading>
+      : 
+      ""}
+
+
     </Pagina>
   )
 }
@@ -89,4 +97,21 @@ const Rodape = styled.footer`
   margin: 50px 0px;
   text-align: center;
   overflow: hidden;
+`;
+
+const Loading = styled.div`
+  position: fixed;
+  left: 0; 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 500px;
+  }
 `;

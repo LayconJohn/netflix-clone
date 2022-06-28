@@ -18,7 +18,7 @@ export default function Topo ( {fundoPreto} ) {
 
 const Header = styled.header`
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 10;
     right: 0;
     left: 0;
