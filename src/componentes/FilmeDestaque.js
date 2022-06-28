@@ -97,6 +97,7 @@ const DestaqueDescricao = styled.div`
 
 const Botoes = styled.div`
     display: flex;
+    align-items: center;
     margin-top: 15px;
     max-width: 25%;
 
